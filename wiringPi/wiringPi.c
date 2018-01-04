@@ -1345,29 +1345,54 @@ int isH5(void)
 		{
 			if (strncmp (line, "Hardware", 8) == 0)
 			break ;
+			if (strncmp (line, "CPU architecture", 16) == 0)
+			break ;
 		}
 		
 	fclose (cpuFd) ;
-	if (strncmp (line, "Hardware", 8) != 0)
-		piBoardRevOops ("No \"Hardware\" line") ;
-	
-  for (d = &line [strlen (line) - 1] ; (*d == '\n') || (*d == '\r') ; --d)
-    *d = 0 ;
-  if (wiringPiDebug)
-    printf ("piboardRev: Hardware string: %s\n", line) ;
-	
-	if (strstr(line,"sun50i") != NULL)			//guenter von sun7i auf sun8i
-	{
+	if (strncmp (line, "Hardware", 8) == 0) {
+
+		for (d = &line [strlen (line) - 1] ; (*d == '\n') || (*d == '\r') ; --d)
+			*d = 0 ;
 		if (wiringPiDebug)
-		printf ("Hardware:%s\n",line) ;
-		return 1 ;
+			printf ("piboardRev: Hardware string: %s\n", line) ;
+		
+		if (strstr(line,"sun50i") != NULL)			//guenter von sun7i auf sun8i
+		{
+			if (wiringPiDebug)
+			printf ("Hardware:%s\n",line) ;
+			return 1 ;
+		}
+		else
+		{
+			if (wiringPiDebug)
+			printf ("Hardware:%s\n",line) ;
+			return 0 ;
+		}
 	}
 	else
-	{
+	if (strncmp (line, "CPU architecture", 16) == 0) {
+
+		for (d = &line [strlen (line) - 1] ; (*d == '\n') || (*d == '\r') ; --d)
+			*d = 0 ;
 		if (wiringPiDebug)
-		printf ("Hardware:%s\n",line) ;
-		return 0 ;
+			printf ("piboardRev: CPU architecture string: %s\n", line) ;
+		
+		if (strstr(line,"8") != NULL)			//guenter von sun7i auf sun8i
+		{
+			if (wiringPiDebug)
+			printf ("Hardware:%s\n",line) ;
+			return 1 ;
+		}
+		else
+		{
+			if (wiringPiDebug)
+			printf ("Hardware:%s\n",line) ;
+			return 0 ;
+		}
 	}
+
+	piBoardRevOops ("No \"Hardware\" line") ;
 }
 /* guenter ende */
 
