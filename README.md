@@ -1,3 +1,12 @@
+# FREE WING改造版 2018/01/04
+Modify missing Hardware info new Linux Kernel 4.13  
+Fix SPI device number  
+
+Orange Pi PC 2 H5で WiringOP（WiringPiの Orange Pi版）を使用して GPIO、SPIを操作する方法  
+(オレンジパイPC2 H5で WiringOPで GPIO、SPIを操作する方法、最新の Kernel 4.13対応版)  
+http://www.neko.ne.jp/~freewing/raspberry_pi/orange_pi_pc2_wiringop_gpio/
+
+
 # wiringBP README
 
 This is a modified WiringPi for OrangePi. We call it WiringOP.
