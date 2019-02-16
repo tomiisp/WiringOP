@@ -656,14 +656,14 @@ static int pinToGpio_BP [64] =
   68, 71,    // 4  5
    2,  6,    // 6, 7
   12, 11,    // 8, 9
-  67, 21,    //10,11
-  64, 65,    //12,13
-  66, 13,    //14,15
-  14, -1,    //16,17
+  13, 21,    //10,11
+  15, 16,    //12,13
+  14, 69,    //14,15
+  70, -1,    //16,17
   -1, -1,    //18,19
   -1,  7,    //20,21
    8,  9,    //22,23
-  10, 20,    //24,25
+  10,107,    //24,25
  200,201,    //26,27
  198,199,    //28,29
   19, 18,    //30,31
@@ -698,16 +698,16 @@ static int pinTobcm_BP [64] =
  12, 11,    //map to BCM GPIO2,3
   6,  7,    //map to BCM GPIO4,5
   8, 21,    //map to BCM GPIO6,7
- 67, 65,    //map to BCM GPIO8,9
- 64, 66,    //map to BCM GPIO10,11
+ 13, 16,    //map to BCM GPIO8,9
+ 15, 14,    //map to BCM GPIO10,11
 200,  9,    //map to BCM GPIO12,13
- 13, 14,    //map to BCM GPIO14,15
+ 69, 70,    //map to BCM GPIO14,15
 201,  1,    //map to BCM GPIO16,17
 110, 10,    //map to BCM GPIO18,19
 198,199,    //map to BCM GPIO20,21
   3, 68,    //map to BCM GPIO22,23
  71,  2,    //map to BCM GPIO24,25
- 20,  0,    //map to BCM GPIO26,27
+107,  0,    //map to BCM GPIO26,27
  
   -1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,  // 29... 44
   -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, //45... 60
@@ -749,22 +749,23 @@ static int physToGpio_BP [64] =
   -1,    -1,   // 1, 2
   12,    -1,   // 3, 4
   11,    -1,   // 5, 6
-   6,    13,   // 7, 8
-  -1,    14,   // 9, 10
+   6,    69,   // 7, 8
+  -1,    70,   // 9, 10
    1,   110,   //11, 12
    0,    -1,   //13, 14
    3,    68,   //15, 16
   -1,    71,   //17, 18
-  64,    -1,   //19, 20
-  65,     2,   //21, 22
-  66,    67,   //23, 24
+  15,    -1,   //19, 20
+  16,     2,   //21, 22
+  14,    13,   //23, 24
   -1,    21,   //25, 26
   19,    18,   //27, 28
    7,    -1,   //29, 30
    8,   200,   //31, 32
    9,    -1,   //33, 34
   10,   201,   //35, 36
-  20,   198,   //37, 38
+ // 20,   198,   //37, 38
+ 107,   198,   //37, 38
   -1,   199,   //39, 40
    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, //41-> 55
    -1, -1, -1, -1, -1, -1, -1, -1 // 56-> 63
@@ -889,10 +890,10 @@ static int BP_PIN_MASK[9][32] =  //[BANK]  [INDEX]
 // guenter anfang ... welche pins werden freigegeben .. -1 = gesperrt
 static int BP_PIN_MASK[9][32] =  //[BANK]  [INDEX]
 {
- { 0, 1, 2, 3,-1,-1, 6, 7, 8, 9,10,11,12,13,14,-1,-1,-1,18,19,20,21,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PA
+ { 0, 1, 2, 3,-1,-1, 6, 7, 8, 9,10,11,12,13,14,15,16,-1,18,19,20,21,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PA
  {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PB
- { 0, 1, 2, 3, 4,-1,-1, 7,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PC
- {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PD
+ { 0, 1, 2, 3, 4, 5, 6, 7,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PC
+ {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,-1,-1,14,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PD
  {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PE
  {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PF
  {-1,-1,-1,-1,-1,-1, 6, 7, 8, 9,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},//PG
@@ -1130,12 +1131,13 @@ void sunxi_set_gpio_mode(int pin,int mode)
 
 void sunxi_digitalWrite(int pin, int value)
 { 
+//printf("sunxi_digitalWrite pin=%d\n",pin);
 	 uint32_t regval = 0;
 	 int bank = pin >> 5;
 	 int index = pin - (bank << 5);
 	 uint32_t phyaddr = SUNXI_GPIO_BASE + (bank * 36) + 0x10; // +0x10 -> data reg
 	   if (wiringPiDebug)
-			printf("func:%s pin:%d, value:%d bank:%d index:%d phyaddr:0x%x\n",__func__, pin , value,bank,index,phyaddr); 
+		printf("func:%s pin:%d, value:%d bank:%d index:%d phyaddr:0x%x\n",__func__, pin , value,bank,index,phyaddr); 
 	 if(BP_PIN_MASK[bank][index] != -1)
 	 {
 			regval = readl(phyaddr);
@@ -1345,54 +1347,29 @@ int isH5(void)
 		{
 			if (strncmp (line, "Hardware", 8) == 0)
 			break ;
-			if (strncmp (line, "CPU architecture", 16) == 0)
-			break ;
 		}
 		
 	fclose (cpuFd) ;
-	if (strncmp (line, "Hardware", 8) == 0) {
-
-		for (d = &line [strlen (line) - 1] ; (*d == '\n') || (*d == '\r') ; --d)
-			*d = 0 ;
+	if (strncmp (line, "Hardware", 8) != 0)
+		piBoardRevOops ("No \"Hardware\" line") ;
+	
+  for (d = &line [strlen (line) - 1] ; (*d == '\n') || (*d == '\r') ; --d)
+    *d = 0 ;
+  if (wiringPiDebug)
+    printf ("piboardRev: Hardware string: %s\n", line) ;
+	
+	if (strstr(line,"sun50i") != NULL)			//guenter von sun7i auf sun8i
+	{
 		if (wiringPiDebug)
-			printf ("piboardRev: Hardware string: %s\n", line) ;
-		
-		if (strstr(line,"sun50i") != NULL)			//guenter von sun7i auf sun8i
-		{
-			if (wiringPiDebug)
-			printf ("Hardware:%s\n",line) ;
-			return 1 ;
-		}
-		else
-		{
-			if (wiringPiDebug)
-			printf ("Hardware:%s\n",line) ;
-			return 0 ;
-		}
+		printf ("Hardware:%s\n",line) ;
+		return 1 ;
 	}
 	else
-	if (strncmp (line, "CPU architecture", 16) == 0) {
-
-		for (d = &line [strlen (line) - 1] ; (*d == '\n') || (*d == '\r') ; --d)
-			*d = 0 ;
+	{
 		if (wiringPiDebug)
-			printf ("piboardRev: CPU architecture string: %s\n", line) ;
-		
-		if (strstr(line,"8") != NULL)			//guenter von sun7i auf sun8i
-		{
-			if (wiringPiDebug)
-			printf ("Hardware:%s\n",line) ;
-			return 1 ;
-		}
-		else
-		{
-			if (wiringPiDebug)
-			printf ("Hardware:%s\n",line) ;
-			return 0 ;
-		}
+		printf ("Hardware:%s\n",line) ;
+		return 0 ;
 	}
-
-	piBoardRevOops ("No \"Hardware\" line") ;
 }
 /* guenter ende */
 
@@ -1646,7 +1623,7 @@ int getAlt (int pin)
 	if(BPRVER == version)
 	{
 
-		//printf("[%s:L%d] the pin:%d  mode: %d is invaild,please check it over!\n", __func__,  __LINE__, pin, wiringPiMode);
+		//printf("[%s:L%d] the pin:%d  mode: %d\n", __func__,  __LINE__, pin, wiringPiMode);
 		if (wiringPiMode == WPI_MODE_PINS)
 			pin = pinToGpio_BP [pin] ;
 		else if (wiringPiMode == WPI_MODE_PHYS)
@@ -2987,32 +2964,32 @@ int wiringPiSetup (void)
 			  //gpio += 0x21b; //for PD0 cubieboard
 				//if (wiringPiDebug)
 				//	printf("++++ gpio PDx:0x%x\n", gpio);
-			  if ((int32_t)gpio == -1)
+			  if (gpio == MAP_FAILED)
 				return wiringPiFailure (WPI_ALMOST,"wiringPiSetup: mmap (GPIO) failed: %s\n", strerror (errno)) ;
 
 			// PWM
 
 			  pwm = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_PWM_BP) ;
-			  if ((int32_t)pwm == -1)
+			  if (pwm == MAP_FAILED)
 				 return wiringPiFailure (WPI_ALMOST,"wiringPiSetup: mmap (PWM) failed: %s\n", strerror (errno)) ;
 			 
 			// Clock control (needed for PWM)
 
 			  clk = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, CLOCK_BASE_BP) ;
-			  if ((int32_t)clk == -1)
+			  if (clk == MAP_FAILED)
 				 return wiringPiFailure (WPI_ALMOST,"wiringPiSetup: mmap (CLOCK) failed: %s\n", strerror (errno)) ;
 			 
 			// The drive pads
 
 			  pads = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_PADS_BP) ;
-			  if ((int32_t)pads == -1)
+			  if (pads == MAP_FAILED)
 				 return wiringPiFailure (WPI_ALMOST,"wiringPiSetup: mmap (PADS) failed: %s\n", strerror (errno)) ;
 
 			#ifdef	USE_TIMER
 			// The system timer
 
 			  timer = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_TIMER_BP) ;
-			  if ((int32_t)timer == -1)
+			  if (timer == MAP_FAILED)
 				return wiringPiFailure (WPI_ALMOST,"wiringPiSetup: mmap (TIMER) failed: %s\n", strerror (errno)) ;
 
 			// Set the timer to free-running, 1MHz.
@@ -3028,25 +3005,25 @@ int wiringPiSetup (void)
 	{
 		// GPIO:
 		  gpio = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE) ;
-		  if ((int32_t)gpio == -1)
+		  if (gpio == MAP_FAILED)
 		    return wiringPiFailure (WPI_ALMOST, "wiringPiSetup: mmap (GPIO) failed: %s\n", strerror (errno)) ;
 
 		// PWM
 
 		  pwm = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_PWM) ;
-		  if ((int32_t)pwm == -1)
+		  if (pwm == MAP_FAILED)
 		    return wiringPiFailure (WPI_ALMOST, "wiringPiSetup: mmap (PWM) failed: %s\n", strerror (errno)) ;
 		 
 		// Clock control (needed for PWM)
 
 		  clk = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, CLOCK_BASE) ;
-		  if ((int32_t)clk == -1)
+		  if (clk == MAP_FAILED)
 		    return wiringPiFailure (WPI_ALMOST, "wiringPiSetup: mmap (CLOCK) failed: %s\n", strerror (errno)) ;
 		 
 		// The drive pads
 
 		  pads = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_PADS) ;
-		  if ((int32_t)pads == -1)
+		  if (pads == MAP_FAILED)
 		    return wiringPiFailure (WPI_ALMOST, "wiringPiSetup: mmap (PADS) failed: %s\n", strerror (errno)) ;
 
 #ifdef	USE_TIMER
