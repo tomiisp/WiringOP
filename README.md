@@ -6,6 +6,8 @@ Orange Pi PC 2 H5で WiringOP（WiringPiの Orange Pi版）を使用して GPIO�
 (オレンジパイPC2 H5で WiringOPで GPIO、SPIを操作する方法、最新の Kernel 4.13対応版)  
 http://www.neko.ne.jp/~freewing/raspberry_pi/orange_pi_pc2_wiringop_gpio/
 
+# 2019/02/16
+ ブランチ feature/fix_gpio_controlで、西川様から戴きました「Pin#8,10,19,21,23,24,37のLチカができない不具合」の修正パッチを反映しました。  
 
 # wiringBP README
 
