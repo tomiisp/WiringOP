@@ -194,7 +194,7 @@ static char *physNames [64] =
  "     3.3v", "GPIO.5   ",
  "     MOSI", "0v       ",
  "     MISO", "RTS2     ",
- "SCK1/TxD3", "CS1/RxD3 ",
+ " SCK/TxD3", "CS/RxD3  ",
  "       0v", "GPIO.11  ",
  "    SDA.1", "SCL.1    ",
  "  GPIO.21", "0v       ",
