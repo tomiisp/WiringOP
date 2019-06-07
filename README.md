@@ -1,4 +1,4 @@
-# wiringBP README
+# wiringOP README
 
 This is a modified WiringPi for OrangePi PC2.
 Tested on Orangepi PC2 H5
