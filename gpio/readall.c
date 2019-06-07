@@ -183,26 +183,26 @@ static char *physNames [64] =
 {
   NULL,
 
- "    3.3v", "5v      ",
- "   SDA.0", "5V      ",
- "   SCL.0", "0v      ",
- "  GPIO.7", "TxD3    ",
- "      0v", "RxD3    ",
- "    RxD2", "GPIO.1  ",
- "    TxD2", "0v      ",
- "    CTS2", "GPIO.4  ",
- "    3.3v", "GPIO.5  ",
- "    MOSI", "0v      ",
- "    MISO", "RTS2    ",
- "    SCLK", "CE0     ",
- "      0v", "GPIO.11 ",
- "   SDA.1", "SCL.1   ",
- " GPIO.21", "0v      ",
- " GPIO.22", "RTS1    ",
- " GPIO.23", "0v      ",
- " GPIO.24", "CTS1    ",
- " GPIO.25", "TxD1    ",
- "      0v", "RxD1    ",
+ "     3.3v", "5v       ",
+ "    SDA.0", "5V       ",
+ "    SCL.0", "0v       ",
+ "   GPIO.7", "GPIO.15  ",
+ "       0v", "GPIO.16  ",
+ "     RxD2", "GPIO.1   ",
+ "     TxD2", "0v       ",
+ "     CTS2", "GPIO.4   ",
+ "     3.3v", "GPIO.5   ",
+ "     MOSI", "0v       ",
+ "     MISO", "RTS2     ",
+ "SCK1/TxD3", "CS1/RxD3 ",
+ "       0v", "GPIO.11  ",
+ "    SDA.1", "SCL.1    ",
+ "  GPIO.21", "0v       ",
+ "  GPIO.22", "RTS1     ",
+ "  GPIO.23", "0v       ",
+ "  GPIO.24", "CTS1     ",
+ "  GPIO.25", "TxD1     ",
+ "       0v", "RxD1     ",
        NULL, NULL,
        NULL, NULL,
        NULL, NULL,
@@ -325,9 +325,9 @@ void abReadall (int model, int rev)
     else
       type = "B1" ;
 
-  printf (" +-----+-----+---------+------+---+-Model %s-+---+------+---------+-----+-----+\n", type) ;
-  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |\n") ;
-  printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
+  printf (" +-----+-----+---------+------+---+-Model %s-+---+------+-----------+-----+-----+\n", type) ;
+  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name      | wPi | BCM |\n") ;
+  printf (" +-----+-----+---------+------+---+----++----+---+------+-----------+-----+-----+\n") ;
   for (pin = 1 ; pin <= 26 ; pin += 2)
     readallPhys (pin) ;
 
@@ -338,9 +338,9 @@ void abReadall (int model, int rev)
       readallPhys (pin) ;
   }
 
-  printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
-  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |\n") ;
-  printf (" +-----+-----+---------+------+---+-Model %s-+---+------+---------+-----+-----+\n", type) ;
+  printf (" +-----+-----+---------+------+---+----++----+---+------+-----------+-----+-----+\n") ;
+  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name      | wPi | BCM |\n") ;
+  printf (" +-----+-----+---------+------+---+-Model %s-+---+------+-----------+-----+-----+\n", type) ;
 }
 
 
@@ -385,14 +385,14 @@ void OrangePiReadAll(void)
 {
   int pin ;
 
-  printf (" +-----+-----+----------+------+---+-Orange Pi+---+---+------+---------+-----+--+\n") ;
-  printf (" | BCM | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi | BCM |\n") ;
-  printf (" +-----+-----+----------+------+---+----++----+---+------+----------+-----+-----+\n") ;
+  printf (" +-----+-----+-----------+------+---+-Orange Pi+---+------+-----------+-----+-----+\n") ;
+  printf (" | BCM | wPi |   Name    | Mode | V | Physical | V | Mode | Name      | wPi | BCM |\n") ;
+  printf (" +-----+-----+-----------+------+---+----++----+---+------+-----------+-----+-----+\n") ;
   for (pin = 1 ; pin <= 40 ; pin += 2)
     readallPhys (pin) ;
-  printf (" +-----+-----+----------+------+---+----++----+---+------+----------+-----+-----+\n") ;
-  printf (" | BCM | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi | BCM |\n") ;
-  printf (" +-----+-----+----------+------+---+-Orange Pi+---+------+----------+-----+-----+\n") ;	
+  printf (" +-----+-----+-----------+------+---+----++----+---+------+-----------+-----+-----+\n") ;
+  printf (" | BCM | wPi |   Name    | Mode | V | Physical | V | Mode | Name      | wPi | BCM |\n") ;
+  printf (" +-----+-----+-----------+------+---+-Orange Pi+---+------+-----------+-----+-----+\n") ;	
 }
 //guenter ende
 
