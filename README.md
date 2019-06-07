@@ -40,4 +40,6 @@ orangepi@orangepi:~$ gpio readall
  | BCM | wPi |   Name    | Mode | V | Physical | V | Mode | Name      | wPi | BCM |
  +-----+-----+-----------+------+---+-Orange Pi+---+------+-----------+-----+-----+
 
-
+NOTE: Pin numbering for H5 (BCM column):
+      (position of letter in alphabet - 1) * 32 + pin number
+      For example: PD11 = ((4-1)*32) + 11 = 107 , PD11 = 107 = GPIO.25
