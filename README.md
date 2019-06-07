@@ -27,7 +27,7 @@ orangepi@orangepi:~$ gpio readall
  |     |     |      3.3v |      |   | 17 || 18 | 0 | ALT3 | GPIO.5    | 5   | 71  |
  |  15 |  12 |      MOSI | ALT3 | 0 | 19 || 20 |   |      | 0v        |     |     |
  |  16 |  13 |      MISO | ALT3 | 0 | 21 || 22 | 0 | ALT3 | RTS2      | 6   | 2   |
- |  14 |  14 | SCK1/TxD3 | ALT4 | 0 | 23 || 24 | 0 | ALT4 | CS1/RxD3  | 10  | 13  |
+ |  14 |  14 |   SCK/TxD3| ALT4 | 0 | 23 || 24 | 0 | ALT4 | CS/RxD3   | 10  | 13  |
  |     |     |        0v |      |   | 25 || 26 | 0 | ALT3 | GPIO.11   | 11  | 21  |
  |  19 |  30 |     SDA.1 | ALT3 | 0 | 27 || 28 | 0 | ALT3 | SCL.1     | 31  | 18  |
  |   7 |  21 |   GPIO.21 | ALT2 | 0 | 29 || 30 |   |      | 0v        |     |     |
